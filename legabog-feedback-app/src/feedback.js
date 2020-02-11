@@ -37,10 +37,11 @@ export class Feedback {
     }
 
     static renderList() {
-        const feedbacks = getQuestionsFromLocalStorage()
+        const feedbacks = getFeedbacksFromLocalStorage()
+       
         const html = feedbacks.length
-            ? questions.map(toCard).join('')
-            : `<div class="mui--text-headline">You have not feedbacks yet</div>`
+            ? feedbacks.map(toCard).join('')
+            : `<div class="mui--text-headline">You have not feedbacks</div>`
     
     
     
@@ -50,7 +51,7 @@ export class Feedback {
     
         list.innerHTML = html
     
-      }
+    }
 
     static listtohtml(feedbacks) {
         return feedbacks.length
